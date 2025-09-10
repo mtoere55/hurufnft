@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>HurufNFT UI</title>
+    <style>
+      body{font:16px/1.5 system-ui,Arial,sans-serif;padding:24px;max-width:840px;margin:auto}
+      .ok{color:#059669}
+      .bad{color:#dc2626}
+    </style>
+  </head>
+  <body>
+    <h1>HurufNFT Sitesi Çalışıyor!</h1>
+    <p>API entegrasyonu hazır. UI dosyaları buraya gelecek.</p>
+    <p>API Sağlık: <span id="api">kontrol ediliyor…</span></p>
+    <script>
+      fetch("/api/health").then(r=>r.ok?document.getElementById('api').innerHTML='<b class="ok">✔ OK</b>':Promise.reject())
+      .catch(()=>{document.getElementById('api').innerHTML='<b class="bad">✖ Hata</b>'});
+    </script>
+  </body>
+</html>
